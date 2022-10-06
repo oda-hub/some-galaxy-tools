@@ -1,0 +1,19 @@
+<tool id="integral-allsky" name="INTEGRAL All Sky" version="0.1.1" python_template_version="3.5">
+    <requirements>
+    </requirements>
+    <command detect_errors="exit_code">
+    <![CDATA[
+        curl https://www.astro.unige.ch/cdci/astrooda/dispatch-data/gw/integralhk/api/v1.0/genlc/ACS/2008-03-19T06:11:41.00/100 > data.json && head data.json
+    ]]>        
+    </command>
+    <inputs>
+        <param name="t0_isot" type="text" label="UTC, ISOT" help="" />
+        <param name="scope_s" type="float" label="scope seconds" help="" />
+    </inputs>
+    <outputs>
+        <data name="data.json" format="json" />
+    </outputs>
+    <help><![CDATA[
+        TODO: Fill in help.
+    ]]></help>
+</tool>
